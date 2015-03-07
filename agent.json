@@ -6,7 +6,9 @@
     "aws_source_ami": "ami-59396769",
     "aws_instance_type": "m3.medium",
     "aws_ssh_username": "ubuntu",
-    "jdk_version": "7"
+    "jdk_version": "7",
+    "jdk_install_flavor": "openjdk",
+    "accept_oracle_download_terms": "false"
   },
   "builders": [
     {
@@ -32,7 +34,11 @@
       ],
       "json": {
         "java": {
-          "jdk_version": "{{user `jdk_version`}}"
+          "jdk_version": "{{user `jdk_version`}}",
+          "install_flavor": "{{user `jdk_install_flavor`}}",
+          "oracle": {
+            "accept_oracle_download_terms": "{{user `accept_oracle_download_terms`}}"
+          }
         }
       }
     }
