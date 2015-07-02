@@ -6,6 +6,7 @@
     "aws_source_ami": "ami-59396769",
     "aws_instance_type": "m3.medium",
     "aws_ssh_username": "ubuntu",
+    "aws_vpc_id": "",
     "jdk_version": "7",
     "jdk_install_flavor": "openjdk",
     "accept_oracle_download_terms": "false"
@@ -20,6 +21,7 @@
       "source_ami": "{{user `aws_source_ami`}}",
       "instance_type": "{{user `aws_instance_type`}}",
       "ssh_username": "{{user `aws_ssh_username`}}",
+      "vpc_id": "{{user `aws_vpc_id`}}",
       "ami_name": "teamcity-agent-jdk{{user `jdk_version`}}-{{isotime | clean_ami_name}}"
     }
   ],
